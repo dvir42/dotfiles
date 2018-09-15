@@ -123,7 +123,7 @@ augroup END
 " {{{
 
 " Basic HTML template. Puts the cursor beween title tags and enter insert mode
-nnoremap <leader>html :-1read $HOME/.dotfiles/nvim/snips/skeleton.html<CR>3jwf>a
+nnoremap <leader>html :-1read $HOME/.config/nvim/snips/skeleton.html<CR>3jwf>a
 " }}}
 
 " ALE:
