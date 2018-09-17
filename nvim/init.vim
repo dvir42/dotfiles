@@ -18,6 +18,7 @@ Plug 'majutsushi/tagbar'
 Plug 'Shougo/echodoc.vim'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-jedi'
+Plug 'sebastianmarkow/deoplete-rust'
 
 call plug#end()
 " }}}
@@ -137,6 +138,7 @@ let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'javascript': ['eslint'],
 \   'python': ['yapf', 'isort'],
+\   'rust': ['rustfmt']
 \ }
 " }}}
 
@@ -150,6 +152,11 @@ let g:echodoc#enable_at_startup=1
 " {{{
 let g:deoplete#enable_at_startup=1
 set completeopt-=preview
+
+" rust:
+let g:deoplete#sources#rust#racer_binary='~/.cargo/bin/racer'
+let g:deoplete#sources#rust#rust_source_path='~/.rustup/toolchains/stable-x86_64-unknown-linux-gnu'
+
 " }}}
 
 " TAGBAR:
