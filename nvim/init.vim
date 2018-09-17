@@ -154,8 +154,8 @@ let g:deoplete#enable_at_startup=1
 set completeopt-=preview
 
 " rust:
-let g:deoplete#sources#rust#racer_binary='$HOME/.cargo/bin/racer'
-let g:deoplete#sources#rust#rust_source_path='$HOME/.rustup/toolchains/stable-x86_64-unknown-linux-gnu'
+let g:deoplete#sources#rust#racer_binary=systemlist('which racer')[0]
+let g:deoplete#sources#rust#rust_source_path=systemlist('rustc --print sysroot')[0].'/lib/rustlib/src/rust/src'
 
 " }}}
 
