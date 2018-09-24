@@ -147,9 +147,12 @@ bindsym $mod+Shift+0 move container to workspace $workspace10
 
 # Workspace Classes
 # {{{
-assign [class="Clementine"] $workspace10
 assign [class="Chromium"] $workspace2
 assign [class="dota2"] $workspace7
+assign [class="Gmpc"] $workspace10
+assign [class="Clementine"] $workspace10
+assign [class="Ario"] $workspace10
+assign [class="cantata"] $workspace10
 assign [class="Steam"] $workspace8
 assign [class="Cadence"] $workspace9
 assign [class="Claudia"] $workspace9
@@ -199,19 +202,7 @@ smart_gaps on
 
 # Bar
 # {{{
-bar {
-        status_command i3blocks -c ~/.config/i3/i3blocks.conf
-	colors {
-	       background $bgcolor_unfocused
-	       separator #757575
-	       #	            border	       background	   text
-	       focused_workspace    $bgcolor_focused   $bgcolor_focused    $textcolor_focused
-	       inactive_workspace   $bgcolor_unfocused $bgcolor_unfocused  $textcolor_unfocused
-	       urgent_workspace     $bgcolor_urgent    $bgcolor_urgent	   $textcolor_urgent
-	}
-	position top
-	font pango:Droid Sans Mono 11
-}
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 # }}}
 
 # Search
@@ -226,23 +217,24 @@ bindsym $mod+d exec rofi -show run -lines 6 -eh 1 -width 20 -opacity "85" -bw 0 
 # {{{
 set $speaker 6
 
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume $speaker +1%
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume $speaker -1%
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute $speaker toggle
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume $(pacmd list-sinks | grep '* index' | cut -c12-) +5%
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume $(pacmd list-sinks | grep '* index' | cut -c12-) -5%
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute $(pacmd list-sinks | grep '* index' | cut -c12-) toggle
 # }}}
 
 # Player Bindings
 # {{{
-bindsym XF86AudioPlayPause exec playerctl play-pause
-bindsym XF86AudioNext exec playerctl next
-bindsym XF86AudioPrev exec playerctl previous
-bindsym XF86AudioStop exec playerctl stop
+bindsym XF86AudioPlayPause exec mpc toggle
+bindsym XF86AudioPlay exec mpc toggle
+bindsym XF86AudioNext exec mpc next
+bindsym XF86AudioPrev exec mpc prev
+bindsym XF86AudioStop exec mpc stop
 # }}}
 
 # Screen Brightness
 # {{{
-# bindsym XF86MonBrightnessUp exec xbacklight -inc 20
-# bindsym XF86MonBrightnessDown exec xbacklight -dec 20
+bindsym XF86MonBrightnessUp exec xbacklight -inc 10
+bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 # }}}
 
 # Touchpad
@@ -268,6 +260,6 @@ exec_always compton
 exec_always setxkbmap -layout us,il -option 'grp:win_space_toggle'
 exec --no-startup-id cadence
 exec --no-startup-id claudia
-exec --no-startup-id clementine
+exec --no-startup-id cantata
 exec --no-startup-id steam
 # }}}
