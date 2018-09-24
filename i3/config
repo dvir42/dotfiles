@@ -1,0 +1,260 @@
+set $mod Mod4
+floating_modifier $mod
+font pango:Droid Sans 11
+
+# Terminal
+# {{{
+bindsym $mod+Return exec urxvt
+for_window [class="URxvt"] border none
+# }}}
+
+# Monitors
+# {{{
+set $laptopScreen "eDP1"
+set $bigScreen "HDMI2"
+exec xrandr --output $bigScreen --auto --right-of $laptopScreen
+# }}}
+
+# Windows
+# {{{
+
+# Motion
+# {{{
+# change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+# }}}
+
+# Resizing
+# {{{
+bindsym $mod+Control+j resize shrink width 1 px or 1 ppt
+bindsym $mod+Control+k resize grow height 1 px or 1 ppt
+bindsym $mod+Control+l resize shrink height 1 px or 1 ppt
+bindsym $mod+Control+semicolon resize grow width 1 px or 1 ppt
+
+# same bindings, but for the arrow keys
+bindsym $mod+Control+Left resize shrink width 1 px or 1 ppt
+bindsym $mod+Control+Down resize grow height 1 px or 1 ppt
+bindsym $mod+Control+Up resize shrink height 1 px or 1 ppt
+bindsym $mod+Control+Right resize grow width 1 px or 1 ppt
+# }}}
+
+# kill focused window
+bindsym $mod+Shift+q kill
+# }}}
+
+# Layouts
+# {{{
+# split in horizontal orientation
+bindsym $mod+b split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+# }}}
+
+# Workspaces:
+# {{{
+set $workspace1 "1 "
+set $workspace2 "2 "
+set $workspace3 "3"
+set $workspace4 "4"
+set $workspace5 "5"
+set $workspace6	"6 "
+set $workspace7 "7 (づ｡◕‿◕｡)づ"
+set $workspace8 "8 "
+set $workspace9 "9"
+set $workspace10 "10 ♫"
+
+# define which workspace goes on which monitor
+workspace $workspace1 output $bigScreen
+workspace $workspace2 output $bigScreen
+workspace $workspace6 output $bigScreen
+
+workspace $workspace8 output $laptopScreen
+workspace $workspace9 output $laptopScreen
+workspace $workspace10 output $laptopScreen
+
+# switch to workspace
+bindsym $mod+1 workspace $workspace1
+bindsym $mod+2 workspace $workspace2
+bindsym $mod+3 workspace $workspace3
+bindsym $mod+4 workspace $workspace4
+bindsym $mod+5 workspace $workspace5
+bindsym $mod+6 workspace $workspace6
+bindsym $mod+7 workspace $workspace7
+bindsym $mod+8 workspace $workspace8
+bindsym $mod+9 workspace $workspace9
+bindsym $mod+0 workspace $workspace10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $workspace1
+bindsym $mod+Shift+2 move container to workspace $workspace2
+bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+6 move container to workspace $workspace6
+bindsym $mod+Shift+7 move container to workspace $workspace7
+bindsym $mod+Shift+8 move container to workspace $workspace8
+bindsym $mod+Shift+9 move container to workspace $workspace9
+bindsym $mod+Shift+0 move container to workspace $workspace10
+
+# Workspace Classes
+assign [class="Clementine"] $workspace10
+assign [class="Chromium"] $workspace2
+assign [class="dota2"] $workspace7
+assign [class="Steam"] $workspace8
+# }}}
+
+# Reloading and exiting
+# {{{
+# reload the configuration file
+bindsym $mod+Shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+# }}}
+
+# Theme
+# {{{
+
+# Colors
+# {{{
+set $bgcolor_focused "#313b44"
+set $textcolor_focused "#dddddd"
+set $bgcolor_unfocused "#313b44"
+set $textcolor_unfocused "#aaaaaa"
+set $bgcolor_urgent "#7a0000"
+set $textcolor_urgent "#e5e5e5"
+
+# ## Themes               border	     background		text		     indicator
+client.focused            $bgcolor_focused   $bgcolor_focused 	$textcolor_focused   $bgcolor_focused
+client.focused_inactive   $bgcolor_unfocused $bgcolor_unfocused $textcolor_unfocused $bgcolor_focused
+client.unfocused          $bgcolor_unfocused $bgcolor_unfocused $textcolor_unfocused $bgcolor_focused
+client.urgent             $bgcolor_urgent    $bgcolor_urgent	$textcolor_urgent    $bgcolor_focused
+# }}}
+
+hide_edge_borders both
+
+# Gaps
+# {{{
+gaps inner 20
+gaps outer 0
+smart_gaps on
+# }}}
+
+# }}}
+
+# Bar
+# {{{
+bar {
+        status_command i3blocks -c ~/.config/i3/i3blocks.conf
+	colors {
+	       background $bgcolor_unfocused
+	       separator #757575
+	       #	            border	       background	   text
+	       focused_workspace    $bgcolor_focused   $bgcolor_focused    $textcolor_focused
+	       inactive_workspace   $bgcolor_unfocused $bgcolor_unfocused  $textcolor_unfocused
+	       urgent_workspace     $bgcolor_urgent    $bgcolor_urgent	   $textcolor_urgent
+	}
+	position top
+	font pango:Droid Sans Mono 11
+}
+# }}}
+
+# Search
+# {{{
+bindsym $mod+d exec rofi -show run -lines 6 -eh 1 -width 20 -opacity "85" -bw 0 -font "Droid Sans 18" -config ~/.local/rofi/config
+# }}}
+
+# XF86 Bindings
+# {{{
+
+# Volume Bindings
+# {{{
+set $speaker 6
+
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume $speaker +1%
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume $speaker -1%
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute $speaker toggle
+# }}}
+
+# Player Bindings
+# {{{
+bindsym XF86AudioPlayPause exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+bindsym XF86AudioStop exec playerctl stop
+# }}}
+
+# Screen Brightness
+# {{{
+# bindsym XF86MonBrightnessUp exec xbacklight -inc 20
+# bindsym XF86MonBrightnessDown exec xbacklight -dec 20
+# }}}
+
+# Touchpad
+# {{{
+bindsym XF86TouchpadToggle exec ~/.config/i3/toggletouchpad.sh
+# }}}
+
+# }}}
+
+# Wallpaper
+# {{{
+exec_always feh --bg-scale ~/Pictures/1920x1080.png
+# }}}
+
+# Lock
+# {{{
+bindsym $mod+shift+x exec i3lock-fancy -gpf Comic-Sans-MS -- scrot -z
+# }}}
+
+# Startup Applications
+# {{{
+exec_always compton
+exec_always setxkbmap -layout us,il -option 'grp:win_space_toggle'
+# exec --no-startup-id clementine
+# exec --no-startup-id steam
+# exec --no-startup-id skypeforlinux
+
+# Workspace 1 cool layout
+# exec --no-startup-id ~/.config/i3/workspace1.sh
+# }}}
