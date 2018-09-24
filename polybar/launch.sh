@@ -7,5 +7,5 @@ killall -q polybar
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
 # Launch bar on all monitors
-MONITOR=HDMI2 polybar --reload top &
+MONITOR=HDMI2 polybar -q --reload top &
 MONITOR=eDP1 polybar --reload top &
