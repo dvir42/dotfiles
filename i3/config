@@ -111,6 +111,7 @@ set $workspace10 "10 ♫"
 workspace $workspace1 output $bigScreen
 workspace $workspace2 output $bigScreen
 workspace $workspace6 output $bigScreen
+workspace $workspace7 output $bigScreen
 
 workspace $workspace8 output $laptopScreen
 workspace $workspace9 output $laptopScreen
