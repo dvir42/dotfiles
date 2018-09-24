@@ -91,6 +91,9 @@ bindsym $mod+a focus parent
 
 # Workspaces:
 # {{{
+
+# Display
+# {{{
 set $workspace1 "1 "
 set $workspace2 "2 "
 set $workspace3 "3"
@@ -101,8 +104,10 @@ set $workspace7 "7 (づ｡◕‿◕｡)づ"
 set $workspace8 "8 "
 set $workspace9 "9"
 set $workspace10 "10 ♫"
+# }}}
 
-# define which workspace goes on which monitor
+# Monitor
+# {{{
 workspace $workspace1 output $bigScreen
 workspace $workspace2 output $bigScreen
 workspace $workspace6 output $bigScreen
@@ -110,7 +115,10 @@ workspace $workspace6 output $bigScreen
 workspace $workspace8 output $laptopScreen
 workspace $workspace9 output $laptopScreen
 workspace $workspace10 output $laptopScreen
+# }}}
 
+# Keybindings
+# {{{
 # switch to workspace
 bindsym $mod+1 workspace $workspace1
 bindsym $mod+2 workspace $workspace2
@@ -126,20 +134,26 @@ bindsym $mod+0 workspace $workspace10
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $workspace1
 bindsym $mod+Shift+2 move container to workspace $workspace2
-bindsym $mod+Shift+3 move container to workspace 3
-bindsym $mod+Shift+4 move container to workspace 4
-bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+3 move container to workspace $workspace3
+bindsym $mod+Shift+4 move container to workspace $workspace4
+bindsym $mod+Shift+5 move container to workspace $workspace5
 bindsym $mod+Shift+6 move container to workspace $workspace6
 bindsym $mod+Shift+7 move container to workspace $workspace7
 bindsym $mod+Shift+8 move container to workspace $workspace8
 bindsym $mod+Shift+9 move container to workspace $workspace9
 bindsym $mod+Shift+0 move container to workspace $workspace10
+# }}}
 
 # Workspace Classes
+# {{{
 assign [class="Clementine"] $workspace10
 assign [class="Chromium"] $workspace2
 assign [class="dota2"] $workspace7
 assign [class="Steam"] $workspace8
+assign [class="Cadence"] $workspace9
+assign [class="Claudia"] $workspace9
+# }}}
+
 # }}}
 
 # Reloading and exiting
@@ -251,10 +265,8 @@ bindsym $mod+shift+x exec i3lock-fancy -gpf Comic-Sans-MS -- scrot -z
 # {{{
 exec_always compton
 exec_always setxkbmap -layout us,il -option 'grp:win_space_toggle'
-# exec --no-startup-id clementine
-# exec --no-startup-id steam
-# exec --no-startup-id skypeforlinux
-
-# Workspace 1 cool layout
-# exec --no-startup-id ~/.config/i3/workspace1.sh
+exec --no-startup-id cadence
+exec --no-startup-id claudia
+exec --no-startup-id clementine
+exec --no-startup-id steam
 # }}}
