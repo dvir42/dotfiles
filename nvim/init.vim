@@ -19,6 +19,7 @@ Plug 'Shougo/echodoc.vim'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-jedi'
 Plug 'sebastianmarkow/deoplete-rust'
+Plug 'PotatoesMaster/i3-vim-syntax'
 
 call plug#end()
 " }}}
