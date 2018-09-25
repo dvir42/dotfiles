@@ -142,7 +142,7 @@ label-offline = mpd is offline
 label-song-maxlen = 100
 label-song-ellipsis = true
 
-toggle-on-foreground = #ff
+toggle-on-foreground = #dfdfdf
 toggle-off-foreground = #55
 
 bar-progress-width = 25
