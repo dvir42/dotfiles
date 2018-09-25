@@ -198,46 +198,34 @@ format-underline = #4bffdc
 label = %percentage_used%%
 ;}}}
 
-[module/wlan]
+[module/network]
 ;{{{
 type = internal/network
-interface = wlp4s0
-interval = 3.0
-
-format-connected = <ramp-signal> <label-connected>
-format-connected-underline = #9f78e1
-label-connected = %essid%
-
-format-disconnected =
-;format-disconnected = <label-disconnected>
-;format-disconnected-underline = ${self.format-connected-underline}
-;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${colors.foreground-alt}
-
-ramp-signal-0 = 
-ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
-ramp-signal-foreground = ${colors.foreground-alt}
-;}}}
-
-[module/eth]
-;{{{
-type = internal/network
-interface = enp5s0f1
 interval = 3.0
 
 format-connected-underline = #55aa55
 format-connected-prefix = " "
 format-connected-prefix-foreground = ${colors.foreground-alt}
-label-connected = %local_ip%
 
 format-disconnected =
 ;format-disconnected = <label-disconnected>
 ;format-disconnected-underline = ${self.format-connected-underline}
 ;label-disconnected = %ifname% disconnected
 ;label-disconnected-foreground = ${colors.foreground-alt}
+;}}}
+
+[module/wlan]
+;{{{
+inherit = module/network
+interface = wlp4s0
+label-connected = %local_ip% | %essid%
+;}}}
+
+[module/eth]
+;{{{
+inherit = module/network
+interface = enp5s0f1
+label-connected = %local_ip%
 ;}}}
 
 [module/date]
