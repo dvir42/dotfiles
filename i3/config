@@ -1,11 +1,11 @@
 set $mod Mod4
 floating_modifier $mod
 font pango:Droid Sans 11
+for_window [class=".*"] border none
 
 # Terminal
 # {{{
 bindsym $mod+Return exec urxvt
-for_window [class="URxvt"] border none
 # }}}
 
 # Monitors
