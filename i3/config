@@ -94,16 +94,26 @@ bindsym $mod+a focus parent
 
 # Display
 # {{{
-set $workspace1 "1 "
-set $workspace2 "2 "
+# set $workspace1 "1 "
+# set $workspace2 "2 "
+# set $workspace3 "3"
+# set $workspace4 "4"
+# set $workspace5 "5"
+# set $workspace6	"6 "
+# set $workspace7 "7 (づ｡◕‿◕｡)づ"
+# set $workspace8 "8 "
+# set $workspace9 "9 "
+# set $workspace10 "10 ♫"
+set $workspace1 "1"
+set $workspace2 "2"
 set $workspace3 "3"
 set $workspace4 "4"
 set $workspace5 "5"
-set $workspace6	"6 "
-set $workspace7 "7 (づ｡◕‿◕｡)づ"
-set $workspace8 "8 "
-set $workspace9 "9 "
-set $workspace10 "10 ♫"
+set $workspace6	"6"
+set $workspace7 "7"
+set $workspace8 "8"
+set $workspace9 "9"
+set $workspace10 "10"
 # }}}
 
 # Monitor
@@ -207,7 +217,7 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Search
 # {{{
-bindsym $mod+d exec rofi -show run -lines 6 -eh 1 -width 20 -opacity "85" -bw 0 -font "Droid Sans 18" -config ~/.local/rofi/config
+bindsym $mod+d exec $HOME/.dotfiles/utils/rofi-launch
 # }}}
 
 # XF86 Bindings
