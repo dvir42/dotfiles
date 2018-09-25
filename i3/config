@@ -12,7 +12,7 @@ for_window [class="URxvt"] border none
 # {{{
 set $laptopScreen "eDP1"
 set $bigScreen "HDMI2"
-exec xrandr --output $bigScreen --auto --right-of $laptopScreen
+exec_always xrandr --output $bigScreen --auto --right-of $laptopScreen
 # }}}
 
 # Windows
