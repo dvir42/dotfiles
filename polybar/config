@@ -123,7 +123,7 @@ label-urgent-padding = 2
 [module/mpd]
 ;{{{
 type = internal/mpd
-format-online = <label-song>  |  <icon-prev>  <icon-stop>  <toggle>  <icon-next>  |  <icon-random>  <icon-repeat>  <icon-single>  |  <bar-progress>
+format-online = <label-song>  |  <icon-prev>  <icon-stop>  <toggle>  <icon-next>  |  <icon-random>  <icon-repeat>  <icon-single>  <icon-consume>  |  <bar-progress>
 format-offline = <label-offline>
 
 icon-prev = 
@@ -134,6 +134,7 @@ icon-next = 
 icon-random = 
 icon-repeat = 
 icon-single = 
+icon-consume = 
 
 label-song = %title% | %album% | %artist%
 label-offline = mpd is offline
