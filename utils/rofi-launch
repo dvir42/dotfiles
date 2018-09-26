@@ -8,4 +8,4 @@ rofi -sidebar-mode \
 -location 0 \
 -show run \
 -columns 3 \
--font "Noto Sans 10"
+-font "Signika 16"
