@@ -41,7 +41,7 @@ font-1 = FontAwesome:size=11;2
 font-2 = DejaVuSansMono Nerd Font:size=12;0
 
 modules-left = i3
-modules-center = mpd
+modules-center =
 modules-right = xbacklight pulseaudio xkeyboard memory cpu wlan eth battery temperature date
 
 tray-position = right
@@ -61,6 +61,19 @@ override-redirect = false
 
 cursor-click = pointer
 cursor-scroll = ns-resize
+;}}}
+
+[bar/bottom]
+;{{{
+inherit = bar/top
+fixed-center = true
+bottom = true
+
+modules-left =
+modules-center = mpd
+modules-right =
+
+tray-position =
 ;}}}
 
 [module/xkeyboard]
