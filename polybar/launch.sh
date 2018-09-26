@@ -10,4 +10,4 @@ while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 MONITOR=HDMI2 polybar -q --reload top &
 MONITOR=HDMI2 polybar -q --reload bottom &
 MONITOR=eDP1 polybar --reload top &
-MONITOR=eDP1 polybar -q --reload bottom &
+MONITOR=eDP1 polybar --reload bottom &
