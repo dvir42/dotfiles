@@ -305,7 +305,7 @@ adapter = AC0
 full-at = 98
 
 format-charging = <animation-charging> <label-charging>
-format-charging-underline = #2f1057
+format-charging-underline = #3f304c
 
 format-discharging = <animation-discharging> <label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
@@ -339,7 +339,7 @@ thermal-zone = 0
 warn-temperature = 100
 
 format = <ramp> <label>
-format-underline = #5b1d5d
+format-underline = #5d424c
 format-warn = <ramp> <label-warn>
 format-warn-underline = ${self.format-underline}
 
