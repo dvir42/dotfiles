@@ -213,6 +213,7 @@ smart_gaps on
 # Bar
 # {{{
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec --no-startup-id $HOME/.config/i3/toggle-bottom-polybar.sh
 # }}}
 
 # Search
@@ -272,4 +273,9 @@ exec --no-startup-id cadence
 exec --no-startup-id claudia
 exec --no-startup-id cantata
 exec --no-startup-id steam
+# }}}
+
+# More Bindings
+# {{{
+bindsym $mod+m exec $HOME/.config/i3/toggle-bottom-polybar.sh
 # }}}
