@@ -47,16 +47,16 @@ bindsym $mod+Shift+Right move right
 
 # Resizing
 # {{{
-bindsym $mod+Control+j resize shrink width 1 px or 1 ppt
-bindsym $mod+Control+k resize grow height 1 px or 1 ppt
-bindsym $mod+Control+l resize shrink height 1 px or 1 ppt
-bindsym $mod+Control+semicolon resize grow width 1 px or 1 ppt
+bindsym $mod+Control+h resize shrink width 10 px or 10 ppt
+bindsym $mod+Control+j resize grow height 10 px or 10 ppt
+bindsym $mod+Control+k resize shrink height 10 px or 10 ppt
+bindsym $mod+Control+l resize grow width 10 px or 10 ppt
 
 # same bindings, but for the arrow keys
-bindsym $mod+Control+Left resize shrink width 1 px or 1 ppt
-bindsym $mod+Control+Down resize grow height 1 px or 1 ppt
-bindsym $mod+Control+Up resize shrink height 1 px or 1 ppt
-bindsym $mod+Control+Right resize grow width 1 px or 1 ppt
+bindsym $mod+Control+Left resize shrink width 10 px or 10 ppt
+bindsym $mod+Control+Down resize grow height 10 px or 10 ppt
+bindsym $mod+Control+Up resize shrink height 10 px or 10 ppt
+bindsym $mod+Control+Right resize grow width 10 px or 10 ppt
 # }}}
 
 # kill focused window
@@ -80,10 +80,10 @@ bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
+bindsym $mod+Shift+g floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+bindsym $mod+g focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
