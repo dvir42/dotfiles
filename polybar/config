@@ -137,7 +137,7 @@ label-urgent-padding = 2
 ;{{{
 type = internal/mpd
 
-format-online-foreground = #4b8cc5
+format-online-foreground = #dfdfdf
 format-offline-foreground = ${colors.foreground-alt}
 
 format-online = <label-song>  |  <icon-prev>  <icon-stop>  <toggle>  <icon-next>  |  <icon-random>  <icon-repeat>  <icon-single>  <icon-consume>  |  <bar-progress>
@@ -159,14 +159,14 @@ label-offline = mpd is offline
 label-song-maxlen = 100
 label-song-ellipsis = true
 
-toggle-on-foreground = ${self.format-online-foreground}
+toggle-on-foreground = #4b8cc5
 toggle-off-foreground = #55
 
 bar-progress-width = 25
 bar-progress-indicator = |
 bar-progress-fill = ─
 bar-progress-empty = ─
-bar-progress-foreground-0 = ${self.format-online-foreground}
+bar-progress-foreground-0 = #4b8cc5
 bar-progress-empty-foreground = ${colors.foreground-alt}
 ;}}}
 
