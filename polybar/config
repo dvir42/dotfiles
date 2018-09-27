@@ -140,7 +140,7 @@ type = internal/mpd
 format-online-foreground = #dfdfdf
 format-offline-foreground = ${colors.foreground-alt}
 
-format-online = <label-song>  |  <icon-prev>  <icon-stop>  <toggle>  <icon-next>  |  <icon-random>  <icon-repeat>  <icon-single>  <icon-consume>  |  <bar-progress>
+format-online = <label-song>  %{F#dfdfdf}|  <icon-prev>  <icon-stop>  <toggle>  <icon-next>  |%{F-}  <icon-random>  <icon-repeat>  <icon-single>  <icon-consume>  |  <bar-progress>
 format-offline = <label-offline>
 
 icon-prev = ""
