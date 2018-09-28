@@ -158,6 +158,7 @@ bindsym $mod+Shift+0 move container to workspace $workspace10
 # Workspace Classes
 # {{{
 assign [class="Chromium"] $workspace2
+assign [class="Ardour"] $workspace5
 assign [class="dota2"] $workspace7
 assign [class="Gmpc"] $workspace10
 assign [class="Clementine"] $workspace10
