@@ -69,9 +69,15 @@ inherit = bar/top
 fixed-center = true
 bottom = true
 
-modules-left =
-modules-center = mpd
-modules-right =
+modules-left = mpd-song
+modules-center = mpd-controls
+modules-right = mpd-progress
+
+padding-left = 10
+padding-right = 120
+
+module-margin-left = 100
+module-margin-right = 100
 
 tray-position =
 ;}}}
@@ -136,13 +142,25 @@ label-urgent-padding = 2
 [module/mpd]
 ;{{{
 type = internal/mpd
-
 format-online-foreground = #dfdfdf
 format-offline-foreground = ${colors.foreground-alt}
+;}}}
 
-format-online = <label-song>  %{F#dfdfdf}|  <icon-prev>  <icon-stop>  <toggle>  <icon-next>  |%{F-}  <icon-random>  <icon-repeat>  <icon-single>  <icon-consume>  |  <bar-progress>
-format-offline = <label-offline>
+[module/mpd-song]
+;{{{
+inherit = module/mpd
+format-online = <label-song>
+format-offline =
+label-song = %{F#4b8cc5}%title%%{F-}  |  %{F#4b8cc5}%album%%{F-}  |  %{F#4b8cc5}%artist%%{F-}
+label-song-maxlen = 1000
+label-song-ellipsis = true
+;}}}
 
+[module/mpd-controls]
+;{{{
+inherit = module/mpd
+format-online = <icon-prev>  <icon-stop>  <toggle>  <icon-next>  |%{F-}  <icon-random>  <icon-repeat>  <icon-single>  <icon-consume>
+format-offline = mpd is offline
 icon-prev = ""
 icon-stop = ""
 icon-play = ""
@@ -152,16 +170,15 @@ icon-random = ""
 icon-repeat = ""
 icon-single = ""
 icon-consume = ""
-
-label-song = %{F#4b8cc5}%title%%{F-}  |  %{F#4b8cc5}%album%%{F-}  |  %{F#4b8cc5}%artist%%{F-}
-label-offline = mpd is offline
-
-label-song-maxlen = 1000
-label-song-ellipsis = true
-
 toggle-on-foreground = #4b8cc5
 toggle-off-foreground = #55
+;}}}
 
+[module/mpd-progress]
+;{{{
+inherit = module/mpd
+format-online = <bar-progress>    %{F#4b8cc5}<label-time>%{F-}
+format-offline =
 bar-progress-width = 25
 bar-progress-indicator = |
 bar-progress-fill = ─
