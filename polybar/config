@@ -140,7 +140,7 @@ type = internal/mpd
 format-online-foreground = #dfdfdf
 format-offline-foreground = ${colors.foreground-alt}
 
-format-online = <label-song> %{F#dfdfdf}|  <icon-prev>  <icon-stop>  <toggle>  <icon-next>  |%{F-}  <icon-random>  <icon-repeat>  <icon-single>  <icon-consume>  |  <bar-progress>
+format-online = <label-song>  %{F#dfdfdf}|  <icon-prev>  <icon-stop>  <toggle>  <icon-next>  |%{F-}  <icon-random>  <icon-repeat>  <icon-single>  <icon-consume>  |  <bar-progress>
 format-offline = <label-offline>
 
 icon-prev = ""
@@ -153,7 +153,7 @@ icon-repeat = ""
 icon-single = ""
 icon-consume = ""
 
-label-song = %{F#4b8cc5}%title%%{F-} | %{F#4b8cc5}%album%%{F-} | %{F#4b8cc5}%artist%%{F-}
+label-song = %{F#4b8cc5}%title%%{F-}  |  %{F#4b8cc5}%album%%{F-}  |  %{F#4b8cc5}%artist%%{F-}
 label-offline = mpd is offline
 
 label-song-maxlen = 1000
