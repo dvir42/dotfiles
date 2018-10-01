@@ -42,7 +42,7 @@ font-2 = DejaVuSansMono Nerd Font:size=12;0
 
 modules-left = i3
 modules-center = date
-modules-right = xbacklight pulseaudio xkeyboard memory cpu wlan eth battery temperature
+modules-right = xbacklight pulseaudio xkeyboard memory cpu eth wlan battery temperature
 
 tray-position = right
 tray-padding = 2
@@ -140,7 +140,7 @@ type = internal/mpd
 format-online-foreground = #dfdfdf
 format-offline-foreground = ${colors.foreground-alt}
 
-format-online = <label-song>  %{F#dfdfdf}|  <icon-prev>  <icon-stop>  <toggle>  <icon-next>  |%{F-}  <icon-random>  <icon-repeat>  <icon-single>  <icon-consume>  |  <bar-progress>
+format-online = <label-song> %{F#dfdfdf}|  <icon-prev>  <icon-stop>  <toggle>  <icon-next>  |%{F-}  <icon-random>  <icon-repeat>  <icon-single>  <icon-consume>  |  <bar-progress>
 format-offline = <label-offline>
 
 icon-prev = ""
@@ -156,7 +156,7 @@ icon-consume = ""
 label-song = %{F#4b8cc5}%title%%{F-} | %{F#4b8cc5}%album%%{F-} | %{F#4b8cc5}%artist%%{F-}
 label-offline = mpd is offline
 
-label-song-maxlen = 100
+label-song-maxlen = 1000
 label-song-ellipsis = true
 
 toggle-on-foreground = #4b8cc5
@@ -224,7 +224,6 @@ type = internal/network
 interval = 3.0
 
 format-connected-underline = #2c6d6a
-format-connected-prefix = " "
 format-connected-prefix-foreground = ${colors.foreground-alt}
 
 format-disconnected =
@@ -239,6 +238,7 @@ format-disconnected =
 inherit = module/network
 interface = wlp4s0
 label-connected = %local_ip% | %essid%
+format-connected-prefix = " "
 ;}}}
 
 [module/eth]
@@ -246,6 +246,7 @@ label-connected = %local_ip% | %essid%
 inherit = module/network
 interface = enp5s0f1
 label-connected = %local_ip%
+format-connected-prefix = " "
 ;}}}
 
 [module/date]
