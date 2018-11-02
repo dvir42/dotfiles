@@ -19,6 +19,7 @@ Plug 'Shougo/echodoc.vim'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-jedi'
 Plug 'sebastianmarkow/deoplete-rust'
+Plug 'eagletmt/neco-ghc'
 Plug 'PotatoesMaster/i3-vim-syntax'
 
 call plug#end()
@@ -139,7 +140,8 @@ let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'javascript': ['eslint'],
 \   'python': ['yapf', 'isort'],
-\   'rust': ['rustfmt']
+\   'rust': ['rustfmt'],
+\   'haskell': ['hlint']
 \ }
 " }}}
 
@@ -157,6 +159,12 @@ set completeopt-=preview
 " rust:
 let g:deoplete#sources#rust#racer_binary=systemlist('which racer')[0]
 let g:deoplete#sources#rust#rust_source_path=systemlist('rustc --print sysroot')[0].'/lib/rustlib/src/rust/src'
+
+" haskell:
+let g:haskellmode_completion_ghc = 0
+augroup HaskellCompletion
+    autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
+augroup END
 
 " }}}
 
