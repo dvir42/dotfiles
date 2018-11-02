@@ -16,10 +16,13 @@ Plug 'scrooloose/nerdtree'
 Plug 'w0rp/ale'
 Plug 'majutsushi/tagbar'
 Plug 'Shougo/echodoc.vim'
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': './install.sh'
+    \ }
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-jedi'
 Plug 'sebastianmarkow/deoplete-rust'
-Plug 'eagletmt/neco-ghc'
 Plug 'PotatoesMaster/i3-vim-syntax'
 
 call plug#end()
@@ -141,7 +144,7 @@ let g:ale_fixers = {
 \   'javascript': ['eslint'],
 \   'python': ['yapf', 'isort'],
 \   'rust': ['rustfmt'],
-\   'haskell': ['hlint']
+\   'haskell': ['brittany']
 \ }
 " }}}
 
@@ -159,13 +162,12 @@ set completeopt-=preview
 " rust:
 let g:deoplete#sources#rust#racer_binary=systemlist('which racer')[0]
 let g:deoplete#sources#rust#rust_source_path=systemlist('rustc --print sysroot')[0].'/lib/rustlib/src/rust/src'
+" }}}
 
-" haskell:
-let g:haskellmode_completion_ghc = 0
-augroup HaskellCompletion
-    autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
-augroup END
-
+" LSP:
+" {{{
+let g:LanguageClient_serverCommands = { 'haskell': ['hie-wrapper'] }
+nnoremap <F5> :call LanguageClient_contextMenu()<CR>
 " }}}
 
 " TAGBAR:
