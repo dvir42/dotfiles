@@ -146,6 +146,11 @@ let g:ale_fixers = {
 \   'rust': ['rustfmt'],
 \   'haskell': ['brittany']
 \ }
+
+hi link ALEError Error
+hi Warning term=underline cterm=underline ctermfg=Yellow gui=undercurl guisp=Gold
+hi link ALEWarning Warning
+hi link ALEInfo SpellCap
 " }}}
 
 " ECHODOC:
@@ -168,6 +173,7 @@ let g:deoplete#sources#rust#rust_source_path=systemlist('rustc --print sysroot')
 " {{{
 let g:LanguageClient_serverCommands = { 'haskell': ['hie-wrapper'] }
 nnoremap <F5> :call LanguageClient_contextMenu()<CR>
+let g:LanguageClient_rootMarkers = ['*.cabal', 'stack.yaml']
 " }}}
 
 " TAGBAR:
