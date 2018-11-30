@@ -28,6 +28,8 @@ export PATH="$HOME/.stack/programs/x86_64-linux/ghc-tinfo6-8.4.3/bin:$PATH"
 
 cowfortune
 
+alias vim=nvim
+
 alias msfconsole="msfconsole -x \"db_connect ${USER}@msf\""
 
 alias tree='tree -C'

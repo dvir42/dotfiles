@@ -1,4 +1,4 @@
-#include ".xrdb/color/spacemacs-dark"
+#include ".xrdb/color/eco"
 #include ".xrdb/rofi/spacemacs-dark"
 
 URxvt*scrollBar:         false

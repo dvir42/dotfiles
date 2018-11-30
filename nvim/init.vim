@@ -52,10 +52,13 @@ let g:airline_powerline_fonts=1
 
 " THEME:
 " {{{
-set termguicolors
+"set termguicolors
 set background="dark"
-colorscheme space-vim-dark
-let g:airline_theme='base16_spacemacs'
+colorscheme ron
+hi Folded ctermbg=NONE
+hi FoldColumn ctermbg=NONE
+hi SignColumn ctermbg=NONE
+let g:airline_theme='base16_shell'
 " }}}
 
 " COMFORTABLE MOTION:
@@ -76,7 +79,10 @@ nnoremap <silent> <C-b> :call comfortable_motion#flick(g:comfortable_motion_impu
 " {{{
 let g:airline#extensions#tabline#enabled=1
 let g:airline#extensions#branch#enabled=1
+" }}}
 
+" NUMBERING:
+" {{{
 " Configure hybrid line numbers
 " Relative is default, absolute is for insert mode, and non-focused
 set number relativenumber
