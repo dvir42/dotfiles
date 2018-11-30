@@ -1,14 +1,16 @@
 [colors]
 ;{{{
 ;background = ${xrdb:color0:#222}
-background = #00222222
-background-alt = #444
+background = #66222222
+background-transparent = #66222222
+background-alt = #547a6c
 ;foreground = ${xrdb:color7:#222}
 foreground = #dfdfdf
-foreground-alt = #555
+foreground-alt = #dfdfdf
 primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
+underline = #b3d4b0
 ;}}}
 
 [bar/top]
@@ -44,8 +46,8 @@ modules-left = i3
 modules-center = date
 modules-right = xbacklight pulseaudio xkeyboard memory cpu eth wlan battery temperature
 
-tray-position = right
-tray-padding = 2
+; tray-position = right
+; tray-padding = 2
 ; tray-transparent = true
 ; tray-background = ${colors.background}
 
@@ -69,6 +71,8 @@ inherit = bar/top
 fixed-center = true
 bottom = true
 
+background = ${colors.background-transparent}
+
 modules-left = mpd-song
 modules-center = mpd-controls
 modules-right = mpd-progress
@@ -89,10 +93,10 @@ blacklist-0 = num lock
 
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-format-prefix-underline = #954c1f
+format-prefix-underline = ${colors.underline}
 
 label-layout = %layout%
-label-layout-underline = #954c1f
+label-layout-underline = ${colors.underline}
 
 label-indicator-padding = 2
 label-indicator-margin = 1
@@ -117,7 +121,7 @@ label-mode-background = ${colors.primary}
 ; focused = Active workspace on focused monitor
 label-focused = %index%
 label-focused-background = ${colors.background-alt}
-label-focused-underline = #cb4674
+label-focused-underline = ${colors.underline}
 label-focused-padding = 2
 
 ; unfocused = Inactive workspace on any monitor
@@ -151,7 +155,7 @@ format-offline-foreground = ${colors.foreground-alt}
 inherit = module/mpd
 format-online = <label-song>
 format-offline =
-label-song = %{F#4b8cc5}%title%%{F-}  |  %{F#4b8cc5}%album%%{F-}  |  %{F#4b8cc5}%artist%%{F-}
+label-song = %{F#b3d4b0}%title%%{F-}  |  %{F#b3d4b0}%album%%{F-}  |  %{F#b3d4b0}%artist%%{F-}
 label-song-maxlen = 1000
 label-song-ellipsis = true
 ;}}}
@@ -170,20 +174,20 @@ icon-random = ""
 icon-repeat = ""
 icon-single = ""
 icon-consume = ""
-toggle-on-foreground = #4b8cc5
+toggle-on-foreground = #B3D4B0
 toggle-off-foreground = #55
 ;}}}
 
 [module/mpd-progress]
 ;{{{
 inherit = module/mpd
-format-online = <bar-progress>    %{F#4b8cc5}<label-time>%{F-}
+format-online = <bar-progress>    %{F#B3D4B0}<label-time>%{F-}
 format-offline =
 bar-progress-width = 25
 bar-progress-indicator = |
 bar-progress-fill = ─
 bar-progress-empty = ─
-bar-progress-foreground-0 = #4b8cc5
+bar-progress-foreground-0 = #B3D4B0
 bar-progress-empty-foreground = ${colors.foreground-alt}
 ;}}}
 
@@ -202,7 +206,7 @@ bar-indicator-foreground = #fff
 bar-indicator-font = 2
 bar-fill = ─
 bar-fill-font = 2
-bar-fill-foreground = #9f78e1
+bar-fill-foreground = ${colors.underline}
 bar-empty = ─
 bar-empty-font = 2
 bar-empty-foreground = ${colors.foreground-alt}
@@ -221,7 +225,7 @@ type = internal/cpu
 interval = 2
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #4d5921
+format-underline = ${colors.underline}
 label = %percentage:2%%
 ;}}}
 
@@ -231,7 +235,7 @@ type = internal/memory
 interval = 2
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #836b20
+format-underline = ${colors.underline}
 label = %percentage_used%%
 ;}}}
 
@@ -240,7 +244,7 @@ label = %percentage_used%%
 type = internal/network
 interval = 3.0
 
-format-connected-underline = #2c6d6a
+format-connected-underline = ${colors.underline}
 format-connected-prefix-foreground = ${colors.foreground-alt}
 
 format-disconnected =
@@ -279,7 +283,7 @@ time-alt = "  %H:%M:%S"
 
 format-prefix =
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #4b8cc5
+format-underline = ${colors.underline}
 
 label = %date% %time%
 ;}}}
@@ -323,7 +327,7 @@ adapter = AC0
 full-at = 98
 
 format-charging = <animation-charging> <label-charging>
-format-charging-underline = #3f304c
+format-charging-underline = ${colors.underline}
 
 format-discharging = <animation-discharging> <label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
@@ -357,7 +361,7 @@ thermal-zone = 0
 warn-temperature = 100
 
 format = <ramp> <label>
-format-underline = #5d424c
+format-underline = ${colors.underline}
 format-warn = <ramp> <label-warn>
 format-warn-underline = ${self.format-underline}
 
