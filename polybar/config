@@ -188,7 +188,7 @@ bar-progress-indicator = |
 bar-progress-fill = ─
 bar-progress-empty = ─
 bar-progress-foreground-0 = #B3D4B0
-bar-progress-empty-foreground = ${colors.foreground-alt}
+bar-progress-empty-foreground = #888
 ;}}}
 
 [module/xbacklight]
@@ -209,7 +209,7 @@ bar-fill-font = 2
 bar-fill-foreground = ${colors.underline}
 bar-empty = ─
 bar-empty-font = 2
-bar-empty-foreground = ${colors.foreground-alt}
+bar-empty-foreground = #888
 ;}}}
 
 [module/backlight-acpi]
@@ -310,7 +310,7 @@ bar-volume-fill = ─
 bar-volume-fill-font = 2
 bar-volume-empty = ─
 bar-volume-empty-font = 2
-bar-volume-empty-foreground = ${colors.foreground-alt}
+bar-volume-empty-foreground = #888
 ;}}}
 
 [module/battery]
