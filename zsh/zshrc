@@ -26,7 +26,7 @@ export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.stack/compiler-tools/x86_64-linux-tinfo6/ghc-8.4.3/bin:$PATH"
 export PATH="$HOME/.stack/programs/x86_64-linux/ghc-tinfo6-8.4.3/bin:$PATH"
 
-cowfortune
+fortune | cowsay
 
 alias vim=nvim
 
