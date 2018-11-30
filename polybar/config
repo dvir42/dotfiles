@@ -2,7 +2,7 @@
 ;{{{
 ;background = ${xrdb:color0:#222}
 background = #66222222
-background-transparent = #66222222
+background-transparent = #33222222
 background-alt = #547a6c
 ;foreground = ${xrdb:color7:#222}
 foreground = #dfdfdf
@@ -175,7 +175,7 @@ icon-repeat = ""
 icon-single = ""
 icon-consume = ""
 toggle-on-foreground = #B3D4B0
-toggle-off-foreground = #55
+toggle-off-foreground = #888
 ;}}}
 
 [module/mpd-progress]
@@ -292,23 +292,17 @@ label = %date% %time%
 ;{{{
 type = internal/pulseaudio
 
-use-ui-max = false
+use-ui-max = true
 
 format-volume = <label-volume> <bar-volume>
 label-volume =  %percentage%%
 label-volume-foreground = ${root.foreground}
 
 label-muted =  muted
-label-muted-foreground = #666
+label-muted-foreground = #888
 
 bar-volume-width = 10
-bar-volume-foreground-0 = #55aa55
-bar-volume-foreground-1 = #55aa55
-bar-volume-foreground-2 = #55aa55
-bar-volume-foreground-3 = #55aa55
-bar-volume-foreground-4 = #55aa55
-bar-volume-foreground-5 = #f5a70a
-bar-volume-foreground-6 = #ff5555
+bar-volume-foreground-0 = ${colors.underline}
 bar-volume-gradient = false
 bar-volume-indicator = |
 bar-volume-indicator-font = 2
