@@ -6,6 +6,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rsi'
+Plug 'rainglow/vim'
 Plug 'rafi/awesome-vim-colorschemes'
 Plug 'yuttie/comfortable-motion.vim'
 Plug 'tpope/vim-fugitive'
@@ -53,12 +54,12 @@ let g:airline_powerline_fonts=1
 " THEME:
 " {{{
 "set termguicolors
-set background="dark"
+"set background=dark
 colorscheme ron
 hi Folded ctermbg=NONE
 hi FoldColumn ctermbg=NONE
 hi SignColumn ctermbg=NONE
-let g:airline_theme='base16_shell'
+let g:airline_theme='base16_ashes'
 " }}}
 
 " COMFORTABLE MOTION:
