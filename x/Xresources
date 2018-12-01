@@ -1,5 +1,5 @@
 #include ".xrdb/color/ashes"
-#include ".xrdb/rofi/spacemacs-dark"
+#include ".xrdb/rofi/ashes"
 
 URxvt*scrollBar:         false
 URxvt*scrollBar_right:   false
