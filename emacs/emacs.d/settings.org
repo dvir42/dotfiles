@@ -1,5 +1,3 @@
-#+STARTUP: overview
-
 * Defaults
 #+BEGIN_SRC emacs-lisp
 (setq inhibit-startup-message t)
