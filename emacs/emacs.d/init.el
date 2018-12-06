@@ -23,3 +23,8 @@
   :ensure t
   :config
   (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
+
+(use-package evil
+  :ensure t
+  :config
+  (evil-mode 1))
