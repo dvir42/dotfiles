@@ -1,0 +1,54 @@
+#+STARTUP: overview
+
+* Defaults
+#+BEGIN_SRC emacs-lisp
+(setq inhibit-startup-message t)
+#+END_SRC
+* use-package
+#+BEGIN_SRC emacs-lisp
+(require 'package)
+(setq package-enable-at-startup nil)
+(add-to-list 'package-archives
+	     '("melpa" . "https://melpa.org/packages/"))
+
+(package-initialize)
+
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
+#+END_SRC
+
+* Packages
+** try
+#+BEGIN_SRC emacs-lisp
+(use-package try
+  :ensure t)
+#+END_SRC
+** which-key
+#+BEGIN_SRC emacs-lisp
+(use-package which-key
+  :ensure t
+  :config
+  (which-key-mode))
+#+END_SRC
+** org-bullets
+#+BEGIN_SRC emacs-lisp
+(use-package org-bullets
+  :ensure t
+  :config
+  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
+#+END_SRC
+** evil
+#+BEGIN_SRC emacs-lisp
+(use-package evil
+  :ensure t
+  :config
+  (evil-mode 1))
+#+END_SRC
+** base16-theme
+#+BEGIN_SRC emacs-lisp
+(use-package base16-theme
+  :ensure t
+  :config
+  (load-theme 'base16-ashes t))
+#+END_SRC
