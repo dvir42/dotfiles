@@ -40,7 +40,7 @@ alias ppc='qemu-system-ppc -hda ~/.qemu-images/debian-wheezy-powerpc.qcow2 -L bi
 
 export MKL_THREADING_LAYER=GNU
 export PYTHONPATH=/usr/bin/python
-export VISUAL=nvim
+export VISUAL=emacs-noquit
 
 alias carla=/opt/carla2.0b5/Carla
 
