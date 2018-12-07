@@ -53,3 +53,11 @@
   :config
   (load-theme 'base16-ashes t))
 #+END_SRC
+** linum-relative
+#+BEGIN_SRC emacs-lisp
+(use-package linum-relative
+  :ensure t
+  :config
+  (linum-relative-on)
+  (setq linum-relative-current-symbol ""))
+#+END_SRC
