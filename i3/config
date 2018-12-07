@@ -270,6 +270,7 @@ bindsym $mod+shift+x exec i3lock-fancy -gpf Comic-Sans-MS -- scrot -z
 exec_always compton --config ~/.config/compton.conf
 exec_always setxkbmap -option caps:escape
 exec_always setxkbmap -layout us,il -option 'grp:win_space_toggle'
+exec --no-startup-id emacs-daemon
 exec --no-startup-id cadence
 exec --no-startup-id claudia
 exec --no-startup-id cantata
