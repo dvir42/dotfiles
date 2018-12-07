@@ -66,7 +66,9 @@
 *** haskell-mode
 #+BEGIN_SRC emacs-lisp
   (use-package haskell-mode
-    :ensure t)
+    :ensure t
+    :config
+    (setq haskell-stylish-on-save t))
 #+END_SRC
 *** intero
 #+BEGIN_SRC emacs-lisp
