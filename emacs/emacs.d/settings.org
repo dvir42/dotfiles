@@ -1,6 +1,9 @@
 * Defaults
 #+BEGIN_SRC emacs-lisp
 (setq inhibit-startup-message t)
+(menu-bar-mode -1)
+(tool-bar-mode -1)
+(scroll-bar-mode -1)
 #+END_SRC
 * use-package
 #+BEGIN_SRC emacs-lisp
