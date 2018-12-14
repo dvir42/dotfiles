@@ -9,4 +9,5 @@ rofi -sidebar-mode \
 -show drun \
 -show-icons \
 -columns 3 \
+-terminal urxvt \
 -font "Signika 16"
