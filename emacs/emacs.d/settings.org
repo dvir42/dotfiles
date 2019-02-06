@@ -67,15 +67,6 @@
     (linum-relative-on)
     (setq linum-relative-current-symbol ""))
    #+END_SRC
-** neotree
-   #+BEGIN_SRC emacs-lisp
-   (use-package neotree
-    :ensure t
-    :general
-    ("<C-tab>" 'neotree-toggle)
-    (:keymaps 'neotree-mode-map
-     "n" 'neotree-next-line))
-   #+END_SRC
 ** helm
    #+BEGIN_SRC emacs-lisp
    (use-package helm
