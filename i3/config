@@ -280,4 +280,7 @@ exec --no-startup-id steam
 # More Bindings
 # {{{
 bindsym $mod+m exec $HOME/.config/i3/toggle-bottom-polybar.sh
+
+## opacity
+bindsym $mod+o exec "transset-df 2 -x 2 -t -i $(xprop -root _NET_ACTIVE_WINDOW | awk '{ print $5 }')"
 # }}}
