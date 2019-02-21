@@ -253,6 +253,11 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 bindsym XF86TouchpadToggle exec ~/.config/i3/toggletouchpad.sh
 # }}}
 
+# Tablet stylus
+# {{{
+exec_always ~/.config/i3/tablet.sh
+# }}}
+
 # }}}
 
 # Wallpaper
