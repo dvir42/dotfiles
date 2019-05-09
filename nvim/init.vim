@@ -190,10 +190,10 @@ nmap <F8> :TagbarToggle<CR>
 
 " DISABLE ARROW KEYS:
 " {{{
-no <down> <Nop>
-no <left> <Nop>
-no <right> <Nop>
-no <up> <Nop>
+nnoremap <down> :resize -2<CR>
+nnoremap <left> :vertical resize +2<CR>
+nnoremap <right> :vertical resize -2<CR>
+nnoremap <up> :resize +2<CR>
 
 ino <down> <Nop>
 ino <left> <Nop>
